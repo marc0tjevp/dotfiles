@@ -1,0 +1,99 @@
+####################
+# Starting Scripts #
+####################
+
+# Start MongoDB for home instance
+alias startmongo='mongod --dbpath=/home/marco/data/db'
+
+# 3th-party eopkg manager
+alias eopkg3='/home/marco/Apps/eopkg3p'
+
+# Season goodies
+alias letitsnow='/home/marco/Apps/snow.sh'
+alias letitrain='/home/marco/Apps/rain.sh'
+
+# Papirus Hardcoded Icons Tray Fixer
+alias fixtrayicon='cd /home/marco/Apps/Hardcode-Tray && sudo -E hardcode-tray --conversion-tool RSVGConvert --size 22 --theme Papirus'
+
+#################
+# Edit dotfiles #
+#################
+
+# Edit Aliases File (This one heh)
+alias editalias='nano /home/marco/.aliases'
+
+# Edit .bashrc
+alias editbash='nano /home/marco/.bashrc'
+
+# Edit .zshrc
+alias editzsh='nano /home/marco/.zshrc'
+
+#################
+#   Shortcuts   #
+#################
+
+# Clear shortcut
+alias c='clear'
+
+# Pretty tree yuh
+alias t='tree -I "node_modules|dist" --dirsfirst -hF'
+
+#################
+#   Functions   #
+#################
+
+# Git add push and commit
+gitcommit() {
+   print "\n\e[7mAdd all, commit and push!\e[27m \n"
+   print "\033[31mCommit Message:\e[0m $* \n"
+   git add . &&
+   git commit -am "$*" &&
+   git push
+}
+
+# Diskspace check
+diskspace() {
+    banner 'Drives'
+    df -h &&
+    banner 'Largest Folders'
+    du -S | sort -n -r | more
+}
+
+##################
+# Visual Helpers #
+##################
+
+#  -----------------
+# |                 |
+# | Prints this box |
+# |                 |
+#  -----------------
+
+function box()
+{
+  local s=("$@") b w
+  for l in "${s[@]}"; do
+    ((w<${#l})) && { b="$l"; w="${#l}"; }
+  done
+  tput setaf 3
+  echo " -${b//?/-}-
+| ${b//?/ } |"
+  for l in "${s[@]}"; do
+    printf '| %s%*s%s |\n' "$(tput setaf 4)" "-$w" "$l" "$(tput setaf 3)"
+  done
+  echo "| ${b//?/ } |
+ -${b//?/-}-"
+  tput sgr 0
+}
+
+# ###################
+# # Prints this box #
+# ###################
+
+banner() {
+    msg="# $* #"
+    edge=$(echo "$msg" | sed 's/./#/g')
+    echo "\n$edge"
+    echo "$msg"
+    echo "$edge\n"
+}
