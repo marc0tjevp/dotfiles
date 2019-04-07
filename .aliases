@@ -8,7 +8,7 @@ alias startmongo='mongod --dbpath=/home/marco/data/db'
 # 3th-party eopkg manager
 alias eopkg3='/home/marco/Apps/eopkg3p'
 
-# Season goodies
+# Celebrate the seasons
 alias letitsnow='/home/marco/Apps/snow.sh'
 alias letitrain='/home/marco/Apps/rain.sh'
 
@@ -21,9 +21,6 @@ alias fixtrayicon='cd /home/marco/Apps/Hardcode-Tray && sudo -E hardcode-tray --
 
 # Edit Aliases File (This one heh)
 alias editalias='nano /home/marco/.aliases'
-
-# Edit .bashrc
-alias editbash='nano /home/marco/.bashrc'
 
 # Edit .zshrc
 alias editzsh='nano /home/marco/.zshrc'

@@ -32,6 +32,9 @@ POWERLEVEL9K_HOME_SUB_ICON=''
 POWERLEVEL9K_FOLDER_ICON=''
 POWERLEVEL9K_ETC_ICON=''
 
+# Path to your oh-my-zsh installation.
+export ZSH="/home/marco/.oh-my-zsh"
+
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Plugins
@@ -43,8 +46,7 @@ plugins=(
   zsh-autosuggestions
 )
 
-# Source
-source $HOME/.aliases
+# Sources
 source $ZSH/oh-my-zsh.sh
+source $HOME/.aliases
 . $HOME/.zsh/plugins/bd/bd.zsh
-
