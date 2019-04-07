@@ -1,6 +1,3 @@
-# User Settings
-DEFAULT_USER=marco
-
 # Behaviour
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
@@ -32,9 +29,6 @@ POWERLEVEL9K_HOME_SUB_ICON=''
 POWERLEVEL9K_FOLDER_ICON=''
 POWERLEVEL9K_ETC_ICON=''
 
-# Path to your oh-my-zsh installation.
-export ZSH="/home/marco/.oh-my-zsh"
-
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Plugins
@@ -47,6 +41,7 @@ plugins=(
 )
 
 # Sources
+export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
-. $HOME/.zsh/plugins/bd/bd.zsh
+
